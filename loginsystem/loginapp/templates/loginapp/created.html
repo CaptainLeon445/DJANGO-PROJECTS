@@ -1,0 +1,7 @@
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Congratulations!</h1>
+    <p>{{new_user.first_name}},Your account is created. You can now<a href="{% url 'loginapp:login' %}">login</a></p>
+    
+{% endblock %}

@@ -1,0 +1,15 @@
+
+{% extends 'loginapp/base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <form  method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Create">
+    </form>
+{% else %}
+    <a href="{% url 'loginapp:login' %}">Login</a>
+{% endif %}
+{% endblock %}

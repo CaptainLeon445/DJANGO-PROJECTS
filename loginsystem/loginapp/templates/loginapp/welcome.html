@@ -1,0 +1,15 @@
+
+{% extends 'loginapp/base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <h1>You are {{ greeting }}</h1>
+    <p><a href="{% url 'loginapp:create_pwd' %}">Create</a> a safe for your password </p>
+
+    <p>Your name {{request.user.first_name}}, <a href="{% url 'loginapp:logout' %}">Logout</a></p>
+    <p><a href="{% url 'loginapp:password_change' %}">Edit Password </a></p>
+{% else %}
+    <a href="{% url 'loginapp:login' %}">Login</a>
+{% endif %}
+{% endblock %}

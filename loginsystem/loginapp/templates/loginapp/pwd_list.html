@@ -1,0 +1,21 @@
+
+{% extends 'loginapp/base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    {% for password in passwords %}
+        <h2>
+            <a href="{{ password.get_absolute_uri }}">
+                {{ password.title }}
+            </a>
+        </h2>
+        
+        <p><a href="{% url 'loginapp:delete' id=password.id%}">Delete</a></p>
+        <p><a href="{% url 'loginapp:edit' id=password.id%}">Edit</a></p>
+        <p >
+            Added {{ password.created }}
+        </p>
+    {% endfor %}
+            
+            
+{% endblock %}

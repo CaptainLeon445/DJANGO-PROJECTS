@@ -1,0 +1,14 @@
+
+{% extends 'loginapp/base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h3>Title: {{ pwd.title }}</h1>
+    <p>
+    Password: {{ pwd.password }}
+    </p>
+    <p>
+        Added: {{ pwd.created }}
+    </p>
+    
+{% endblock %} 

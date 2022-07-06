@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h1>Send Email</h1>
+    <form method="post">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Subject</label>
+            {{form.subject}}
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Email</label>
+            {{form.email}}
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">TO</label>
+            {{form.to}}
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Message</label>
+            {{form.message}}
+        </div>
+        {% csrf_token %}
+
+        <input type="submit" value="Send">
+            
+    </form>
+</div>
+ 
+{% endblock %}
+
+
+
+  

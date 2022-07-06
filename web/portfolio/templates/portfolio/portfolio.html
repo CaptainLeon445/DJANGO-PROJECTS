@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}My Portfolio{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 40px;">
+    {% for project in portfolio %}
+    <div>
+        <img src="{{  project.picture.url }}" class="rounded mx-auto d-block" alt="...">
+        <h2>{{project.title}}</h2> <br>
+        <h3>{{project.description}}</h3>
+        <p><a href="">Read More</a></p>
+    </div>
+  {% endfor %}
+</div>
+ 
+{% endblock %}

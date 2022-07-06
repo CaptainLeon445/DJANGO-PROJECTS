@@ -1,0 +1,27 @@
+{% extends "loginapp/base.html" %} 
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+
+    <h1>Log-in</h1>
+    {% if form.errors %}
+        <p>Password and Username didn't match</p>
+    {% else %}
+        <p>Please, use the following form to log-in</p>
+    {% endif %}
+    <form action="{% url 'loginapp:login' %}" method="post">
+        {% csrf_token %}
+        <label for="username" style="color: red;">Username</label>
+        <input type="text" name="username" required> <br>
+        <label for="password">Password</label>
+        <input type="text" name="password" required>
+        
+        <input type="hidden" name="next" value="{{ next }}" />
+        
+        <p><input type="submit" value="Log In"></p>
+    </form>
+    <p><a href="{% url 'loginapp:password_reset' %}">Forgot Password?</a></p>
+    
+        
+
+{% endblock %}
